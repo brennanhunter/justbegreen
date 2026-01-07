@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Header() {
   return (
@@ -9,18 +10,18 @@ export default function Header() {
       }}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-center" style={{ height: '146px' }}>
+        <div className="flex items-center justify-center py-4">
           {/* Logo */}
-          <div className="flex items-center justify-center">
+          <Link href="/" className="flex items-center justify-center">
             <Image
-              src="/logos/logo.png"
+              src="/logos/logo-new.png"
               alt="Just Be Green Media"
-              width={400}
+              width={160}
               height={160}
               priority
               className="object-contain"
             />
-          </div>
+          </Link>
         </div>
       </div>
     </header>
