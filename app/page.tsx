@@ -1,9 +1,13 @@
-import Link from "next/link";
+'use client';
+
+import { useState } from "react";
 
 export default function Home() {
+  const [showComingSoon, setShowComingSoon] = useState(false);
+
   return (
     <main>
-      {/* Our Clientelle Link Bar */}
+      {/* Our Clientelle Button Bar */}
       <section 
         className="w-full py-8 px-4"
         style={{
@@ -11,14 +15,24 @@ export default function Home() {
         }}
       >
         <div className="mx-auto max-w-7xl text-center">
-          <Link 
-            href="/our-clientelle"
-            className="inline-block text-white text-3xl font-bold hover:underline transition-all"
+          <button 
+            onClick={() => setShowComingSoon(!showComingSoon)}
+            className="inline-block text-white text-3xl font-bold hover:underline transition-all cursor-pointer"
           >
             Our Clientelle
-          </Link>
+          </button>
         </div>
       </section>
+
+      {/* Coming Soon Message */}
+      {showComingSoon && (
+        <section className="w-full bg-gray-50 py-16 px-4">
+          <div className="mx-auto max-w-7xl text-center">
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">Coming Soon</h2>
+            <p className="text-xl text-gray-600">Site Under Development</p>
+          </div>
+        </section>
+      )}
 
       {/* White Background Section */}
       <section className="w-full bg-white py-48">
