@@ -14,7 +14,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center justify-center">
             <Image
-              src="/logos/logo-new.png"
+              src="/logos/logo-llc.png"
               alt="Just Be Green Media"
               width={160}
               height={160}

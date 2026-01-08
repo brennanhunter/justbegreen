@@ -17,7 +17,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl text-center">
           <button 
             onClick={() => setShowComingSoon(!showComingSoon)}
-            className="inline-block text-white text-3xl font-bold hover:underline transition-all cursor-pointer"
+            className="inline-block text-white text-lg font-normal hover:underline transition-all cursor-pointer"
           >
             Our Clientelle
           </button>
