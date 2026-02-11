@@ -149,25 +149,53 @@ export default function TVGrid() {
               {selectedSlot.divisions && selectedSlot.divisions.length > 0 && (
                 <div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-4">Divisions</h3>
-                  <ul className="grid grid-cols-2 gap-3">
-                    {selectedSlot.divisions.map((division, index) => (
-                      <li key={index}>
-                        {division.link ? (
-                          <a
-                            href={division.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="block p-3 bg-gray-50 hover:bg-green-50 rounded-lg transition-colors font-medium text-gray-700 hover:text-green-700"
-                          >
-                            {division.name}
-                          </a>
-                        ) : (
-                          <div className="block p-3 bg-gray-50 rounded-lg font-medium text-gray-700">
-                            {division.name}
-                          </div>
-                        )}
-                      </li>
-                    ))}
+                  <ul className="grid grid-cols-2 gap-4">
+                    {selectedSlot.divisions.map((division, index) => {
+                      const imagePath = `/images/industries/${division.name.toLowerCase().replace(/\s+/g, '-')}.png`;
+                      
+                      return (
+                        <li key={index}>
+                          {division.link ? (
+                            <a
+                              href={division.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="block relative aspect-video rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all group"
+                            >
+                              <Image
+                                src={division.image}
+                                alt={division.name}
+                                fill
+                                className="object-cover"
+                                sizes="(max-width: 768px) 50vw, 320px"
+                              />
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                              <div className="absolute inset-0 flex items-center justify-center">
+                                <span className="text-white font-bold text-xl text-center drop-shadow-lg px-4">
+                                  {division.name}
+                                </span>
+                              </div>
+                            </a>
+                          ) : (
+                            <div className="block relative aspect-video rounded-lg overflow-hidden shadow-md">
+                              <Image
+                                src={division.image}
+                                alt={division.name}
+                                fill
+                                className="object-cover"
+                                sizes="(max-width: 768px) 50vw, 320px"
+                              />
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                              <div className="absolute inset-0 flex items-center justify-center">
+                                <span className="text-white font-bold text-xl text-center drop-shadow-lg px-4">
+                                  {division.name}
+                                </span>
+                              </div>
+                            </div>
+                          )}
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               )}

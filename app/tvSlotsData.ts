@@ -11,7 +11,7 @@ export interface TVSlot {
   showLogo?: boolean;
   link?: string;
   hasModal?: boolean;
-  divisions?: Array<{ name: string; link?: string }>;
+  divisions?: Array<{ name: string; link?: string; image: string }>;
 }
 
 export const tvSlots: TVSlot[] = [
@@ -26,7 +26,7 @@ export const tvSlots: TVSlot[] = [
   { id: 9, title: "Conthien Veterans Memorial", description: "Under Construction", image: "/web-snips/conthiens.png", link: "https://conthienveteransmemorial.com/" },
   { id: 10, title: "Just Be Green Ideas", description: "Ideas for a sustainable future", image: "/web-snips/jbg-ideas.png", link: "https://justbegreenideas.com/" },
   { id: 11, title: "Just Be Green Smart Tech", description: "First Smart Tech Agro Community Development", image: "/web-snips/jbg-smart-tech.png", link: "https://justbegreensmarttech.com/" },
-  { id: 12, title: "Title Here", description: "This will be the description", image: "/images/justbegreenhome.jpg", showLogo: true },
+  { id: 12, title: "Just Be Green Business Center", description: "International Executive Suites Platforms", image: "/web-snips/jbg-business-center.png", link: "https://justbegreenbusinesscenter.com/" },
   { id: 13, title: "Title Here", description: "This will be the description", image: "/images/placeholder.png" },
   { id: 14, title: "Title Here", description: "This will be the description", image: "/images/placeholder.png" },
   { id: 15, title: "Title Here", description: "This will be the description", image: "/images/justbegreenhome.jpg", showLogo: true },
